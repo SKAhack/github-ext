@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "Github-ext",
+  "description": "",
+  "version": "0.0.1",
+  "author": "Hiroki Sato",
+
+  "content_scripts": [{
+    "matches": [ "*://github.com/*" ],
+    "js": [ "index.js" ],
+    "run_at": "document_idle"
+  }],
+
+  "web_accessible_resources": [ ]
+}
