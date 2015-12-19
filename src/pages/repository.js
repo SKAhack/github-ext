@@ -1,4 +1,4 @@
-const pathRegex = /[\/](.*?)\/(.*)/;
+const pathRegex = /^[\/]([^\/]*?)\/([^\/]*)$/;
 
 class Repository {
   constructor() {
@@ -9,6 +9,10 @@ class Repository {
       org: matches[1],
       repo: matches[2]
     };
+  }
+
+  get name() {
+    return 'Repository';
   }
 }
 

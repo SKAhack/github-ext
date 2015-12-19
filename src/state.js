@@ -1,5 +1,12 @@
 import Repository from './pages/repository';
 import PullRequest from './pages/pull-request';
+import Issue from './pages/issue';
+
+const pages = [
+  Repository,
+  PullRequest,
+  Issue
+];
 
 class State {
   constructor() {
@@ -14,13 +21,17 @@ class State {
   detectPage() {
     const path = window.location.pathname;
 
-    if (PullRequest.detect(path)) {
-      return new PullRequest();
-    } else if (Repository.detect(path)) {
-      return new Repository();
+    for (var page of pages) {
+      if (page.detect(path)) {
+        return new page();
+      }
     }
 
     return null;
+  }
+
+  get page() {
+    return this.state.page;
   }
 }
 

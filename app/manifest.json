@@ -12,5 +12,9 @@
     "run_at": "document_idle"
   }],
 
+  "permissions": [
+    "https://api.trello.com/"
+  ],
+
   "web_accessible_resources": [ ]
 }
