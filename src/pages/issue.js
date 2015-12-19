@@ -37,6 +37,12 @@ class Issue {
   get issueNumber() {
     return this.pageObj.number;
   }
+
+  addDiscussionItem(htmlString) {
+    $('.discussion-timeline .timeline-comment-wrapper')
+      .eq(0)
+      .after(htmlString);
+  }
 }
 
 Issue.detect = function(path) {

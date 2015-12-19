@@ -47,14 +47,12 @@ class Trello {
       modelTypes: "cards"
     };
 
-    this.trello.get("/1/search", q, function(err, res) {
+    this.trello.get("/1/search", q, (err, res) => {
       if (err) throw err;
       if (res.cards.length === 0) return;
 
       const card = res.cards[0];
-      $('.discussion-timeline .timeline-comment-wrapper')
-        .eq(0)
-        .after(renderTemplate(card));
+      this.page.addDiscussionItem(renderTemplate(card));
     });
   }
 }
