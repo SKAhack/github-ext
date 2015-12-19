@@ -1,12 +1,4 @@
-import Repository from './pages/repository';
-import PullRequest from './pages/pull-request';
-import Issue from './pages/issue';
-
-const pages = [
-  Repository,
-  PullRequest,
-  Issue
-];
+import { pages } from 'github-ext-core';
 
 class State {
   constructor() {
