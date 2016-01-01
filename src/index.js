@@ -4,7 +4,6 @@ import DontMerge from './plugins/dont-merge';
 import Trello from './plugins/trello';
 import RelatedPullRequest from './plugins/related-pull-request';
 
-const url = 'https://gist.githubusercontent.com/SKAhack/bc9b3d25a3618d09132a/raw/setting.json';
 const plugins = {
   DontDeleteReleaseBranch,
   DontMerge,
@@ -12,4 +11,9 @@ const plugins = {
   RelatedPullRequest
 };
 
-init(window, url, plugins);
+chrome.storage.sync.get({
+  userSetting: '{}'
+}, function(items){
+  let setting = JSON.parse(items.userSetting);
+  init(window, plugins, setting);
+});

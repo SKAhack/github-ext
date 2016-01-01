@@ -3,7 +3,7 @@
 
   "name": "Github-ext",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "author": "Hiroki Sato",
 
   "content_scripts": [{
@@ -12,7 +12,13 @@
     "run_at": "document_idle"
   }],
 
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+
   "permissions": [
+    "storage",
     "https://api.trello.com/"
   ],
 
